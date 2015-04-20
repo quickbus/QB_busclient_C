@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.qb_busclient_c"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+    
+    <!--baidumapapi permission  -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />  
+	<uses-permission android:name="android.permission.USE_CREDENTIALS" />  
+	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />  
+	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />  
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  
+	<uses-permission android:name="android.permission.INTERNET" />  
+	<uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />  
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />  
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />  
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />  
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />  
+	<uses-permission android:name="android.permission.BROADCAST_STICKY" />  
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" />  
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<!-- 	<uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" /> -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+
+    <!-- <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"></uses-permission> -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/qb_busclient"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <meta-data  
+        	android:name="com.baidu.lbsapi.API_KEY"  
+       		android:value="ddFv4TZU3BlDTSvWv0dU2VSp" /> 
+        
+        <activity
+            android:name="com.example.qb_busclient_c.PreLoadingActivity"
+            android:label="@string/app_name" 
+            android:launchMode="standard"
+            android:theme="@style/PreLoading"  >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.qb_busclient_c.AutoLaunchActivity"
+            android:label="@string/app_name" 
+            android:launchMode="standard"
+            android:theme="@style/PreLoading"  >
+        </activity>
+        <activity
+            android:name="com.example.qb_busclient_c.MainActivity"
+            android:label="@string/app_name" 
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"  >
+        </activity>
+        <activity
+            android:name="com.example.qb_busclient_c.QBMapActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <service 
+            android:name="com.baidu.location.f" 
+            android:enabled="true" 
+            android:process=":remote">
+		</service>
+    </application>
+
+</manifest>
